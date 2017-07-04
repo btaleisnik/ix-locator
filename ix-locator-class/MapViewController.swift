@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  ix-locator-class
 //
 //  Created by Brandon Taleisnik on 7/4/17.
@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
+    
+    @IBOutlet weak var map: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
