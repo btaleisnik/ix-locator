@@ -1,80 +1,52 @@
 //
-//  ActivityTableViewController.swift
+//  SettingsTableViewController.swift
 //  ix-locator-class
 //
-//  Created by Brandon Taleisnik on 7/4/17.
+//  Created by Brandon Taleisnik on 7/5/17.
 //  Copyright © 2017 Brandon Taleisnik. All rights reserved.
 //
 
 import UIKit
 
-class ActivityTableViewController: UITableViewController, AddActivityDelegate {
-    
-    var activities: [Activity] = []
+class SettingsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        activities.append(Activity(name: "iOS Dev", description: "ios Development"))
-        activities.append(Activity(name: "Sharks", description: "Shark Cage Diving"))
-        
-        let activity = Activity(name: "Zipline", description: "Ziplining")
-        activities.append(activity)
 
-        self.tableView.reloadData()
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
 
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activities.count
-    }
-
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.textLabel?.text = activities[indexPath.row].name
-        cell.detailTextLabel?.text = activities[indexPath.row].description
-        
+        // Configure the cell...
+
         return cell
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let newActivity = Activity()
-        
-        if (segue.identifier == "navToAddActivity") {
-                        
-            let navigationViewController = segue.destination as! UINavigationController
-            let addActivityViewController = navigationViewController.topViewController as! AddActivityViewController!
-            
-            addActivityViewController?.delegate = self
-            addActivityViewController?.newActivity = newActivity
-            
-        }
-        
-    }
-    
-    func didSaveActivity(activity: Activity) {
-        activities.append(Activity(name: activity.name, description: activity.description))
-        
-        self.tableView.reloadData()
-    }
-    
-    func didCancelActivity() {
-        
-    }
-    
-    
+    */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

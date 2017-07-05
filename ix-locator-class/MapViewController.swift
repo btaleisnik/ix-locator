@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, AddActivityDelegate {
     
     @IBOutlet weak var map: MKMapView!
 
@@ -21,6 +21,32 @@ class MapViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func didSaveActivity(activity: Activity) {
+        print("Name: " + activity.name!)
+        print("Description: " + activity.description!)
+    }
+    
+    func didCancelActivity() {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let newActivity = Activity()
+        
+        if (segue.identifier == "appleMapSegue") {
+            
+            let navigationController = segue.destination as! UINavigationController
+            let addActivityVC = navigationController.topViewController as! AddActivityViewController
+            
+            addActivityVC.newActivity = newActivity
+            addActivityVC.delegate = self
+            
+        }
+        
+        
     }
 
 

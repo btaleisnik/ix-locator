@@ -18,5 +18,10 @@ class Activity {
         self.description = description
     }
     
+    init() {
+        self.name = ""
+        self.description = ""
+    }
+    
     
 }
