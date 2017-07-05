@@ -8,14 +8,18 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController, AddActivityDelegate {
     
     @IBOutlet weak var map: MKMapView!
+    
+    let annotation = MKPointAnnotation()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +30,9 @@ class MapViewController: UIViewController, AddActivityDelegate {
     func didSaveActivity(activity: Activity) {
         print("Name: " + activity.name!)
         print("Description: " + activity.description!)
+        
+        annotation.coordinate = CLLocationCoordinate2D(latitude: activity.latitude!,longitude: activity.longitude!)
+        map.addAnnotation(annotation)
     }
     
     func didCancelActivity() {
@@ -48,6 +55,28 @@ class MapViewController: UIViewController, AddActivityDelegate {
         
         
     }
+    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        print(locations[0].coordinate.latitude)
+//        print(locations[0].coordinate.longitude)
+//
+//    }
+//    
+//    
+//    func determineCurrentLocation() {
+//        let locationManager = CLLocationManager()
+//        locationManager.delegate = self
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.requestAlwaysAuthorization()
+//        
+//        if CLLocationManager.locationServicesEnabled() {
+//            locationManager.startUpdatingLocation()
+//        }
+//        
+//    }
+
+    
+    
 
 
 }

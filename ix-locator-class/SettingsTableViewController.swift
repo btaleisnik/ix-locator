@@ -9,9 +9,15 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var editNameButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameTextField.isEnabled = false
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -23,6 +29,37 @@ class SettingsTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func editName(_ sender: Any) {
+        
+        if (editNameButton.currentTitle == "Edit") {
+            
+            print ("Currently editing")
+            
+            // Change button to save title
+            editNameButton.setTitle("Save", for: .normal)
+            
+            
+            nameLabel.text = ""
+            
+            // Enable editing of textfield and format
+            nameTextField.isHidden = false
+            nameTextField.isEnabled = true
+            nameTextField.becomeFirstResponder()
+            nameTextField.layer.borderWidth = 0.5
+            let borderColor : UIColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
+            nameTextField.layer.borderColor = borderColor.cgColor
+            nameTextField.layer.cornerRadius = 5.0
+        } else {
+            print ("Saved new name: " + nameTextField.text!)
+            
+            nameTextField.isHidden = true
+            nameLabel.text = nameTextField.text
+            editNameButton.setTitle("Edit", for: .normal)
+        }
+        
     }
 
     // MARK: - Table view data source
