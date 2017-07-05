@@ -60,15 +60,29 @@ class AddActivityViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         
-        
-        delegate?.didSaveActivity(activity: newActivity!)
-
-        self.dismiss(animated: true, completion: nil)
+        // Checks that all data fields are filled in for Activity
+        if (isActivityDataComplete(newActivity: newActivity)) {
+            
+            delegate?.didSaveActivity(activity: newActivity!)
+            
+            self.dismiss(animated: true, completion: nil)
+        }
 
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.latestLocation = locations[0]
+    }
+    
+    
+    //Verifies all Activity variables have datas
+    func isActivityDataComplete(newActivity: Activity?)-> Bool {
+        if (newActivity?.name != "" && newActivity?.description != "" && newActivity?.latitude != nil && newActivity?.longitude != nil) {
+            
+            return true
+        } else {
+            return false
+        }
     }
 
 

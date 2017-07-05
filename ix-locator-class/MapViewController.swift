@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
+
 class MapViewController: UIViewController, AddActivityDelegate {
     
     @IBOutlet weak var map: MKMapView!
@@ -18,8 +19,38 @@ class MapViewController: UIViewController, AddActivityDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        setMapType()
 
+    }
+    
+    func setMapType() {
+
+        let mapType = UserDefaults.standard.string(forKey: "mapType")
+        
+        if mapType != nil {
+            
+            if mapType == "hybrid" {
+                map.mapType = .hybrid
+            }
+            
+            if mapType == "hybridFlyover" {
+                map.mapType = .hybridFlyover
+            }
+            
+            if mapType == "satellite" {
+                map.mapType = .satellite
+            }
+            
+            if mapType == "satelliteFlyover" {
+                map.mapType = .satelliteFlyover
+            }
+            
+            if mapType == "standard" {
+                map.mapType = .standard
+            }
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +64,7 @@ class MapViewController: UIViewController, AddActivityDelegate {
         
         annotation.coordinate = CLLocationCoordinate2D(latitude: activity.latitude!,longitude: activity.longitude!)
         map.addAnnotation(annotation)
+        
     }
     
     func didCancelActivity() {
