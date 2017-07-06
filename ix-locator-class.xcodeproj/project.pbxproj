@@ -18,6 +18,8 @@
 		CA0B271F1F0BDEFF006F0CF7 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0B271E1F0BDEFF006F0CF7 /* AddActivityViewController.swift */; };
 		CA0B27211F0CFC82006F0CF7 /* AddActivityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0B27201F0CFC82006F0CF7 /* AddActivityDelegate.swift */; };
 		CA0B27231F0D012E006F0CF7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0B27221F0D012E006F0CF7 /* SettingsTableViewController.swift */; };
+		CA0B27251F0E3D33006F0CF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA0B27241F0E3D33006F0CF7 /* GoogleService-Info.plist */; };
+		CA0B27271F0E44B4006F0CF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0B27261F0E44B4006F0CF7 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		CA0B271E1F0BDEFF006F0CF7 /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 		CA0B27201F0CFC82006F0CF7 /* AddActivityDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityDelegate.swift; sourceTree = "<group>"; };
 		CA0B27221F0D012E006F0CF7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		CA0B27241F0E3D33006F0CF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CA0B27261F0E44B4006F0CF7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F1E7F32958D6D8DD5C8D1E38 /* Pods-ix-locator-class.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ix-locator-class.release.xcconfig"; path = "Pods/Target Support Files/Pods-ix-locator-class/Pods-ix-locator-class.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +95,7 @@
 				CA0B27081F0BD126006F0CF7 /* AppDelegate.swift */,
 				CA0B270A1F0BD126006F0CF7 /* MapViewController.swift */,
 				CA0B270C1F0BD126006F0CF7 /* Main.storyboard */,
+				CA0B27261F0E44B4006F0CF7 /* LoginViewController.swift */,
 				CA0B27221F0D012E006F0CF7 /* SettingsTableViewController.swift */,
 				CA0B271E1F0BDEFF006F0CF7 /* AddActivityViewController.swift */,
 				CA0B27201F0CFC82006F0CF7 /* AddActivityDelegate.swift */,
@@ -99,6 +104,7 @@
 				CA0B270F1F0BD126006F0CF7 /* Assets.xcassets */,
 				CA0B27111F0BD126006F0CF7 /* LaunchScreen.storyboard */,
 				CA0B27141F0BD126006F0CF7 /* Info.plist */,
+				CA0B27241F0E3D33006F0CF7 /* GoogleService-Info.plist */,
 			);
 			path = "ix-locator-class";
 			sourceTree = "<group>";
@@ -166,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA0B27131F0BD126006F0CF7 /* LaunchScreen.storyboard in Resources */,
+				CA0B27251F0E3D33006F0CF7 /* GoogleService-Info.plist in Resources */,
 				CA0B27101F0BD126006F0CF7 /* Assets.xcassets in Resources */,
 				CA0B270E1F0BD126006F0CF7 /* Main.storyboard in Resources */,
 			);
@@ -230,6 +237,7 @@
 				CA0B27211F0CFC82006F0CF7 /* AddActivityDelegate.swift in Sources */,
 				CA0B27091F0BD126006F0CF7 /* AppDelegate.swift in Sources */,
 				CA0B271D1F0BD59D006F0CF7 /* Activity.swift in Sources */,
+				CA0B27271F0E44B4006F0CF7 /* LoginViewController.swift in Sources */,
 				CA0B271F1F0BDEFF006F0CF7 /* AddActivityViewController.swift in Sources */,
 				CA0B271B1F0BD467006F0CF7 /* ActivityTableViewController.swift in Sources */,
 				CA0B27231F0D012E006F0CF7 /* SettingsTableViewController.swift in Sources */,
@@ -398,6 +406,7 @@
 				CA0B27191F0BD126006F0CF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

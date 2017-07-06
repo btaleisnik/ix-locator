@@ -7,5 +7,8 @@ target 'ix-locator-class' do
 
   # Pods for ix-locator-class
   pod 'Firebase/Core’
+  pod ‘Firebase/Auth’
+  pod ‘FacebookCore’
+  pod ‘FacebookLogin’
 
 end
