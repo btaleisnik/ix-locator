@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1910A1F4441F66FC104B72 /* Pods_ix_locator_class.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DCE931D1DF2F436136E4D1 /* Pods_ix_locator_class.framework */; };
 		CA0B27091F0BD126006F0CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0B27081F0BD126006F0CF7 /* AppDelegate.swift */; };
 		CA0B270B1F0BD126006F0CF7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0B270A1F0BD126006F0CF7 /* MapViewController.swift */; };
 		CA0B270E1F0BD126006F0CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA0B270C1F0BD126006F0CF7 /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43DCE931D1DF2F436136E4D1 /* Pods_ix_locator_class.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ix_locator_class.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66009886B547643BE44B3500 /* Pods-ix-locator-class.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ix-locator-class.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ix-locator-class/Pods-ix-locator-class.debug.xcconfig"; sourceTree = "<group>"; };
 		CA0B27051F0BD126006F0CF7 /* ix-locator-class.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ix-locator-class.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0B27081F0BD126006F0CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA0B270A1F0BD126006F0CF7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		CA0B271E1F0BDEFF006F0CF7 /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 		CA0B27201F0CFC82006F0CF7 /* AddActivityDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityDelegate.swift; sourceTree = "<group>"; };
 		CA0B27221F0D012E006F0CF7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		F1E7F32958D6D8DD5C8D1E38 /* Pods-ix-locator-class.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ix-locator-class.release.xcconfig"; path = "Pods/Target Support Files/Pods-ix-locator-class/Pods-ix-locator-class.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1910A1F4441F66FC104B72 /* Pods_ix_locator_class.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		506E2A6A8FCD3DCCA964608A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				66009886B547643BE44B3500 /* Pods-ix-locator-class.debug.xcconfig */,
+				F1E7F32958D6D8DD5C8D1E38 /* Pods-ix-locator-class.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		74B43C66AFC4D9C848C722F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43DCE931D1DF2F436136E4D1 /* Pods_ix_locator_class.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CA0B26FC1F0BD126006F0CF7 = {
 			isa = PBXGroup;
 			children = (
 				CA0B27071F0BD126006F0CF7 /* ix-locator-class */,
 				CA0B27061F0BD126006F0CF7 /* Products */,
+				506E2A6A8FCD3DCCA964608A /* Pods */,
+				74B43C66AFC4D9C848C722F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA0B27171F0BD126006F0CF7 /* Build configuration list for PBXNativeTarget "ix-locator-class" */;
 			buildPhases = (
+				A7D43F6C83205E6ADD12E41F /* [CP] Check Pods Manifest.lock */,
 				CA0B27011F0BD126006F0CF7 /* Sources */,
 				CA0B27021F0BD126006F0CF7 /* Frameworks */,
 				CA0B27031F0BD126006F0CF7 /* Resources */,
+				EC6FC1E61C6A891AB933A14C /* [CP] Embed Pods Frameworks */,
+				23F5A40CB46E6F862DF908AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -145,6 +172,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23F5A40CB46E6F862DF908AB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ix-locator-class/Pods-ix-locator-class-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7D43F6C83205E6ADD12E41F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC6FC1E61C6A891AB933A14C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ix-locator-class/Pods-ix-locator-class-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA0B27011F0BD126006F0CF7 /* Sources */ = {
@@ -280,6 +355,7 @@
 		};
 		CA0B27181F0BD126006F0CF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66009886B547643BE44B3500 /* Pods-ix-locator-class.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ix-locator-class/Info.plist";
@@ -292,6 +368,7 @@
 		};
 		CA0B27191F0BD126006F0CF7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1E7F32958D6D8DD5C8D1E38 /* Pods-ix-locator-class.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ix-locator-class/Info.plist";

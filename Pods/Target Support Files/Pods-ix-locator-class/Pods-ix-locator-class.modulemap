@@ -1,0 +1,6 @@
+framework module Pods_ix_locator_class {
+  umbrella header "Pods-ix-locator-class-umbrella.h"
+
+  export *
+  module * { export * }
+}
