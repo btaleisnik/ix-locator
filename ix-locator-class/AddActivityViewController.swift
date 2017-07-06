@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreLocation
+//import FirebaseDatabase
+import Alamofire
 
 class AddActivityViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -21,6 +23,9 @@ class AddActivityViewController: UIViewController, CLLocationManagerDelegate {
     var delegate: AddActivityDelegate?
     var newActivity: Activity?
     
+    // var ref: DatabaseReference! = Database.database().reference()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +36,6 @@ class AddActivityViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,14 +64,42 @@ class AddActivityViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         
-        // Checks that all data fields are filled in for Activity
-        if (isActivityDataComplete(newActivity: newActivity)) {
-            
-            delegate?.didSaveActivity(activity: newActivity!)
-            
-            self.dismiss(animated: true, completion: nil)
-        }
+        
+//        self.ref.child("users").setValue(["username": "Test1"])
+//        
+//        var testRef = ref.child("users")
+//        
+//        var refHandle = testRef.observe(DataEventType.value, with: { (snapshot) in
+//            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+//            print(postDict)
+//        })
 
+        
+//        Alamofire.request("https://ix-locator-1499093950654.firebaseio.com/UserTest").responseJSON {
+//            response in
+//            print(response.request!)
+//            print(response.response!)
+//            print(response.data!)
+//            print(response.result)
+//        }
+        
+        
+        Alamofire.request("https://ix-locator-1499093950654.firebaseio.com/activities.json", method: .post, parameters: newActivity?.toJSON(), encoding: JSONEncoding.default).responseJSON(completionHandler: {
+            response in
+            
+            switch response.result {
+            case .success:
+                // Checks that all data fields are filled in for Activity
+                if (self.isActivityDataComplete(newActivity: self.newActivity)) {
+                    self.delegate?.didSaveActivity(activity: self.newActivity!)
+                    self.dismiss(animated: true, completion: nil)
+                }
+                break
+            case .failure:
+                break
+            }
+        })
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

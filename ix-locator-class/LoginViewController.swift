@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import FacebookCore
-import FacebookLogin
-import FBSDKLoginKit
-import FirebaseAuth
+//import FacebookCore
+//import FacebookLogin
+//import FBSDKLoginKit
+//import FirebaseAuth
 
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: UIViewController { //FBSDKLoginButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,38 +27,38 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 //            
 //        }
         
-        let loginButton = FBSDKLoginButton()
-        loginButton.delegate = self
-        
+//        let loginButton = FBSDKLoginButton()
+//        loginButton.delegate = self
+//        
     }
     
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        
+//    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+//        
+//    
+//        if let error = error {
+//            print(error.localizedDescription)
+//            return
+//        }
+//        
+//        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+//
+//        Auth.auth().signIn(with: credential) { (user, error) in
+//            if let error = error {
+//                print("Error with sign in: " + error.localizedDescription)
+//                return
+//            }
+//            
+//        }
+//        
+//        print("USER IS SIGNED IN YAY")
+//        
+//    }
     
-        if let error = error {
-            print(error.localizedDescription)
-            return
-        }
-        
-        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-
-        Auth.auth().signIn(with: credential) { (user, error) in
-            if let error = error {
-                print("Error with sign in: " + error.localizedDescription)
-                return
-            }
-            
-        }
-        
-        print("USER IS SIGNED IN YAY")
-        
-    }
     
     
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("User Logged Out")
-    }
+//    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+//        print("User Logged Out")
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

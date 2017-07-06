@@ -10,5 +10,9 @@ target 'ix-locator-class' do
   pod ‘Firebase/Auth’
   pod ‘FacebookCore’
   pod ‘FacebookLogin’
+  pod ‘Firebase/Database’
+  pod 'Alamofire', '~> 4.4'
+  pod 'Gloss', '~> 1.2'
+
 
 end
