@@ -15,11 +15,14 @@ class MapViewController: UIViewController, AddActivityDelegate {
     @IBOutlet weak var map: MKMapView!
     
     let annotation = MKPointAnnotation()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setMapType()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setMapType()
 
     }
     
