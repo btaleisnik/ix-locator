@@ -9,20 +9,65 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Alamofire
 
 class MapViewController: UIViewController, AddActivityDelegate {
     
     @IBOutlet weak var map: MKMapView!
     
     let annotation = MKPointAnnotation()
+    var activities: [Activity] = []
     
     override func viewWillAppear(_ animated: Bool) {
         setMapType()
+        setupPins()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        setupPins()
+        
+
+    }
+    
+    
+    func setupPins() {
+        Alamofire.request("https://ix-locator-1499093950654.firebaseio.com/activities.json").responseJSON(completionHandler: {
+            response in
+            
+            //print(response.result.value)
+            
+            if let activityDictionary = response.result.value as? [String: AnyObject] {
+                
+                self.activities = []
+                
+                for (key, value) in activityDictionary {
+                    print("Key: \(key)")
+                    print("Value: \(value)")
+                    
+                    if let singleActivityDictionary = value as? [String: AnyObject] {
+                        //Create new Activity
+                        let newActivity = Activity(dictionary: singleActivityDictionary)
+                        
+                        if (newActivity.latitude != nil && newActivity.longitude != nil) {
+                            //Add pin for new Activity
+                            let annotation = MKPointAnnotation()
+                            annotation.coordinate = CLLocationCoordinate2DMake(newActivity.latitude!, newActivity.longitude!);
+                            annotation.title = newActivity.name
+                            self.map.addAnnotation(annotation)
+                        }
+                        
+                        //Add to activities[] dictionary
+                        self.activities.append(newActivity)
+                    }
+                    
+                }
+                
+                
+            }
+        })
 
     }
     
@@ -65,7 +110,9 @@ class MapViewController: UIViewController, AddActivityDelegate {
         print("Description: " + activity.description!)
         
         annotation.coordinate = CLLocationCoordinate2D(latitude: activity.latitude!,longitude: activity.longitude!)
+        annotation.title = activity.name
         map.addAnnotation(annotation)
+        
         
     }
     

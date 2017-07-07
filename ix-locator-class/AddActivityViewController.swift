@@ -14,6 +14,7 @@ import Alamofire
 class AddActivityViewController: UIViewController, CLLocationManagerDelegate {
 
 
+    @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     
@@ -25,10 +26,24 @@ class AddActivityViewController: UIViewController, CLLocationManagerDelegate {
     
     // var ref: DatabaseReference! = Database.database().reference()
     
+    @IBAction func photoFromLibrary(_ sender: Any) {
+    }
+    
+    @IBAction func shootPhoto(_ sender: Any) {
+    }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //Add TextView Border
+        let myColor: UIColor = UIColor.darkGray
+        descriptionTextView.layer.borderWidth = 0.1
+        descriptionTextView.layer.cornerRadius = 5.0
+        descriptionTextView.layer.borderColor = myColor.cgColor
+        
+        
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self

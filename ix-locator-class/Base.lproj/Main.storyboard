@@ -502,6 +502,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHY-LI-unA">
+                                <rect key="frame" x="21" y="601" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Camera Library"/>
+                                <connections>
+                                    <action selector="photoFromLibrary:" destination="HV9-fv-tRa" eventType="touchUpInside" id="6Ls-11-FY2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkr-Dy-hfY">
+                                <rect key="frame" x="268" y="601" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="shootPhoto:" destination="HV9-fv-tRa" eventType="touchUpInside" id="ETi-S5-rQF"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCc-W5-kvn">
+                                <rect key="frame" x="42" y="356" width="291" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -533,6 +553,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionTextView" destination="oCk-GH-rx4" id="Vn2-yP-JOJ"/>
+                        <outlet property="myImageView" destination="DCc-W5-kvn" id="XtE-ri-JSc"/>
                         <outlet property="nameTextField" destination="cRR-9v-kCB" id="5Zv-km-kXt"/>
                     </connections>
                 </viewController>
