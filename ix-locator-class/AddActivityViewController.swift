@@ -11,12 +11,14 @@ import CoreLocation
 //import FirebaseDatabase
 import Alamofire
 
-class AddActivityViewController: UIViewController, CLLocationManagerDelegate {
+class AddActivityViewController: UIViewController, CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
 
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
+    
+    let picker = UIImagePickerController()
     
     let locationManager: CLLocationManager = CLLocationManager()
     var latestLocation: CLLocation?
@@ -27,6 +29,10 @@ class AddActivityViewController: UIViewController, CLLocationManagerDelegate {
     // var ref: DatabaseReference! = Database.database().reference()
     
     @IBAction func photoFromLibrary(_ sender: Any) {
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(picker, animated: true, completion: nil)
     }
     
     @IBAction func shootPhoto(_ sender: Any) {
@@ -36,6 +42,8 @@ class AddActivityViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        picker.delegate = self
         
         //Add TextView Border
         let myColor: UIColor = UIColor.darkGray
@@ -130,6 +138,20 @@ class AddActivityViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             return false
         }
+    }
+    
+    //PHOTO DELEGATE FUNCTIONS
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        myImageView.contentMode = .scaleAspectFit //3
+        myImageView.image = chosenImage //4
+        dismiss(animated:true, completion: nil) //5
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 
 
