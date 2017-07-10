@@ -86,6 +86,10 @@ class AddActivityViewController: UIViewController, CLLocationManagerDelegate, UI
             newActivity = Activity(name: nameTextField.text, description: descriptionTextView.text)
         }
         
+        if let activityImage = myImageView.image {
+            newActivity?.image = activityImage
+        }
+        
         
         
 //        self.ref.child("users").setValue(["username": "Test1"])

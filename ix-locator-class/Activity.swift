@@ -16,6 +16,8 @@ class Activity: Decodable {
     var description: String?
     var latitude: Double?
     var longitude: Double?
+    var image: UIImage?
+    var imageURL: String?
     
     init(name: String?, description: String?) {
         self.name = name

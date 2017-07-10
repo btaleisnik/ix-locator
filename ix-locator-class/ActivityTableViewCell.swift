@@ -13,6 +13,7 @@ class ActivityTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var latAndLong: UILabel!
     @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var photo: UIImageView!
 
     
     
