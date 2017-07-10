@@ -81,6 +81,10 @@ class ActivityTableViewController: UITableViewController, AddActivityDelegate {
         }
         cell.latAndLong.text = location
         
+        if let activityImage = activities[indexPath.row].image {
+            cell.photo.image = activityImage
+        }
+        
         return cell
     }
     
